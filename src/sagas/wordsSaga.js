@@ -5,9 +5,9 @@ import * as api from '../api/wordsApi';
 function* getWords(){
 	try{
 		const result = yield call(api.getWords);
-		console.log(result)
+		console.log(result.data)
 		yield put(actions.getUsersSuccess({
-			items: result.data.data
+			items: result.data
 		}));
 	}catch(e){
 		console.log(e);
